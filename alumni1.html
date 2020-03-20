@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+            <title>Terbit - Developer Alumni</title>
+        <link href="styles.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="style2.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar" id="mainNav">
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" href="index.html">Terbit</a>
+                </div>
+                <div>
+                    <a class="navbar-brand" href="schedule.html">Jadwal</a>
+                    <a class="navbar-brand" href="alumni.html">Alumni</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="page-section" style="background-color: #7b7b7b;">
+            <div class="container h-100">
+                <div class="row h-100 align-items-left justify-content-left text-left" style="color: #fff;">
+                    <div class="col-lg-10" style="align-self: flex-end; padding-bottom: 2%">
+                        <h2 style="font-weight: 700;">Alumni</h2>
+                    </div>
+                    <div class="col-lg-9" style="align-self: baseline;">
+                        <p style="font-weight: 400; margin-bottom: 5%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nihil eum ipsam odio quaerat placeat rem magni.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- section 1 -->
+        <div class="konten2">
+            <center>
+                <div id="a1"></div>
+                <button class="bt"><a href="">Selanjutnya</a></button>
+            </center>
+        </div>
+        <!-- section 2 -->
+        <section class="page-section" style="background-image: linear-gradient(to right, #FFEB3B, #FFBA00);">
+            <div class="container" style="background-color: #fff; border-radius: 0.7rem;">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-6">
+                        <h2 class="mt-5" style="padding-bottom: 1%; text-align: left; font-family: sans-serif; color: #008b8b;">Mari Belajar Bersama Kami</h2>
+                        <p style="font-weight: 500; margin-bottom: 3rem; line-height: 40px; text-align: left; font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerumplaceat hic accusantium, eos magni blanditils.</p>
+                    </div>
+                    <div class="col-lg-3" style="padding-top: 7%;">
+                        <button class="text-center" style="padding-bottom: 1%; font-family: sans-serif; font-size: 20px; color: #000000; background-image: linear-gradient(to right, #FFEB3B, #FFBA00); width: 70%; height: 40%;">Daftar Untuk Mulai</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5" style="background-color: #000000">
+            <div class="container"><div class="small text-center text-muted">dengan <img src="img/heart.jpg" style="width: 1%"> untuk palu</div></div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js" type="text/javascript">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.3/scriptaculous.js" type="text/javascript">
+        </script>
+        <script>
+        function hxover(x) {
+          x.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)";
+        }
+        function hxout(x) {
+          x.style.boxShadow = "none";
+        }
+        </script>
+
+        <script type="text/javascript">
+        ( function($) {
+            // we can now rely on $ within the safety of our "bodyguard" function
+            $(document).ready(function() {
+                    $.ajax({
+                      url : 'https://sunrise-server.herokuapp.com/alumnus?page=1',
+                      type: "GET",
+                      dataType: "JSON",
+                      success: function(data, xhr, $form) {  
+                        var results = JSON.parse(data);
+                        var h = 0;
+                        var l = "";
+                        for (var i = 0; i < results.result.length; i++) {
+                            var x = parseInt(results.result[i].id);
+                            var z = x%3;
+                            var a = results.result[i].photo;
+
+                            if (z == 1) {
+                                h++;
+                            $("#a1")
+                            .append("<tr id=\"id"+h+"\">"+
+                                        "<td>"+
+                                            "<table>"+
+                                            "<tr><td><img src=\""+a+"\"></td></tr>"+
+                                            "<tr><td>"+results.result[i].name+"</td></tr>"+
+                                            "<tr><td>"+results.result[i].excerpt+"</td></tr>"+
+                                            "</table>"+
+                                        "</td>"+
+                                    "</tr>"
+                                    )
+                            }else if (z == 2) {
+                            var d = document.getElementById("id"+h);
+                            l = d.insertCell(0);
+                            l.innerHTML =         "<td>"+
+                                            "<table>"+
+                                            "<tr><td><img src=\""+a+"\"></td></tr>"+
+                                            "<tr><td>"+results.result[i].name+"</td></tr>"+
+                                            "<tr><td>"+results.result[i].excerpt+"</td></tr>"+
+                                            "</table>"+
+                                        "</td>";
+
+                            }else{
+                            var d = document.getElementById("id"+h);
+                            l = d.insertCell(0);
+                            l.innerHTML =         "<td>"+
+                                            "<table>"+
+                                            "<tr><td><img src=\""+a+"\"></td></tr>"+
+                                            "<tr><td>"+results.result[i].name+"</td></tr>"+
+                                            "<tr><td>"+results.result[i].excerpt+"</td></tr>"+
+                                            "</table>"+
+                                        "</td>";
+                            }
+                        }
+                      },
+                      error: function(data) {
+                      }
+                    });});
+                })( jQuery );
+        </script>
+    </body>
+</html>

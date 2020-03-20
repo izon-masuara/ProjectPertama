@@ -1,0 +1,183 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* micro clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+.kotakUtama {
+    height: 2500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.link{
+    margin-top: 40px;
+    margin-left: 10px;
+    width: 1150px;
+    height: 100px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.link .link1{
+    float: left;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.link .link2{
+    margin-left: 80%;
+    display: inline;
+    text-align: right;
+}
+
+.link p{
+    font: bold 20px arial,serif;
+}
+
+.linka:link{
+    color: black;
+}
+
+.linka:hover{
+    color: black;
+}
+
+.linka:active{
+    color: black;
+}
+
+.linka:visited{
+    color:black;
+}
+
+a{
+    text-decoration: none;
+}
+
+.kotakAwal{
+    height: 250px;
+    width: 1400px;
+    background-color: grey;
+    margin-top: -40px;
+    border: 2px solid grey;
+}
+
+.kotakAwal .tulisan1, .tulisan2{
+    margin-left: 150px;
+    font: normal 22px sans-serif, serif;
+    color: white;
+    margin-top: 10px;
+}
+
+.kotakAwal .tulisan{
+    height: 100px;
+    border: 2px solid grey;
+    margin-top: 100px;
+}
+
+.kotakAwal .tulisan1{
+    font: normal 16px sans-serif,serif;
+}
+
+.tabelUtama{
+    margin-top: 100px;
+    margin-left: 140px;
+}
+
+.tabelAwal tr, td {
+    width: 300px;
+    border-bottom: 1px solid black;
+    text-align: left;
+    padding: 10px;
+}
+
+.daftar{
+    background-image: linear-gradient( to right, yellow,orange);
+    height: 350px;
+    margin-top: 30px;
+    border: 2px solid rgb(247, 222, 0);
+}
+
+.daftarPutih{
+    height: 150px;
+    width: 800px;
+    background-color: white;
+    margin-top: 80px;
+    margin-left: 225px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 10px 15px 0px rgb(161, 150, 150);
+}
+
+.daftarPutih .daftarTulisan{
+    height: 100px;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.daftarTulisan h2{
+    font: normal 20px sans-serif, serif;
+    color: cadetblue;
+}
+
+.daftarTulisan p{
+    font: normal 16px/22px sans-serif,serif;
+}
+
+.Dum{
+    background-color: rgb(245, 221, 6);
+    height: 50px;
+    width: 150px;
+    text-align:center;
+    margin-left: 500px;
+    margin-top: -90px;
+    box-shadow: 0px 10px 20px 0px rgb(168, 166, 166);
+}
+
+.kotakAkhir{
+    background-color: rgb(90, 88, 88);
+    height: 250px;
+}
+
+.tabelAwal .tr{
+    font-weight: bold;
+}
+
+.tr{
+    font-weight: bold;
+}
